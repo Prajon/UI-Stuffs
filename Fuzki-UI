@@ -68,33 +68,59 @@ function FuzkiLib:Create(name, gameName)
     lineTab.Size = UDim2.new(0, 435, 0, 1)
 
     local UserInputService = game:GetService("UserInputService")
+    local runService = (game:GetService("RunService"));
 
-    local TopBar = MainLib
+    local gui = MainLib
 
-    local Camera = workspace:WaitForChild("Camera")
+    local dragging
+    local dragInput
+    local dragStart
+    local startPos
 
-    local DragMousePosition
-    local FramePosition
-    local Draggable = false
-    TopBar.InputBegan:Connect(function(input)
+    function Lerp(a, b, m)
+        return a + (b - a) * m
+    end;
+
+    local lastMousePos
+    local lastGoalPos
+    local DRAG_SPEED = (15); -- // The speed of the UI darg.
+    function Update(dt)
+        if not (startPos) then return end;
+        if not (dragging) and (lastGoalPos) then
+            gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
+            return 
+        end;
+
+        local delta = (lastMousePos - UserInputService:GetMouseLocation())
+        local xGoal = (startPos.X.Offset - delta.X);
+        local yGoal = (startPos.Y.Offset - delta.Y);
+        lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
+        gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
+    end;
+
+    gui.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-            Draggable = true
-            DragMousePosition = Vector2.new(input.Position.X, input.Position.Y)
-            FramePosition = Vector2.new(MainLib.Position.X.Scale, MainLib.Position.Y.Scale)
-        end
-    end)
-    UserInputService.InputChanged:Connect(function(input)
-        if Draggable == true then
-            local NewPosition = FramePosition + ((Vector2.new(input.Position.X, input.Position.Y) - DragMousePosition) / Camera.ViewportSize)
-            MainLib.Position = UDim2.new(NewPosition.X, 0, NewPosition.Y, 0)
+            dragging = true
+            dragStart = input.Position
+            startPos = gui.Position
+            lastMousePos = UserInputService:GetMouseLocation()
+
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
         end
     end)
 
-    UserInputService.InputEnded:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-            Draggable = false
+    gui.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            dragInput = input
         end
     end)
+
+    runService.Heartbeat:Connect(Update)
+    
 
     title.Name = "title"
     title.Parent = MainLib
