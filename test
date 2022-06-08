@@ -120,6 +120,7 @@ function FuzkiLib:Create(name, gameName)
     end)
 
     runService.Heartbeat:Connect(Update)
+    
 
     title.Name = "title"
     title.Parent = MainLib
@@ -611,4 +612,3 @@ function FuzkiLib:Create(name, gameName)
     return InsideFuzki
 end
 return FuzkiLib
-print("SexHub")
