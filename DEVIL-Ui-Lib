@@ -1,12 +1,29 @@
+------------------------------------------------------------
+--[[
+
+    This script auto deletes old UI
+
+]]
+
 for i,v in pairs(game.CoreGui:GetChildren()) do
     if v.Name == "DEVIL_UI_Lib" then
         v:Remove()
     end
 end
 
-local WindowTable = {}
+------------------------------------------------------------
+--[[
 
-function WindowTable:CreateWindow(GuiName, GameName)
+    Main Ui Library
+
+]]
+------------------------------------------------------------
+
+local DEVIL_UI_Library = {}
+
+function DEVIL_UI_Library:CreateWindow(GuiName, GameName)
+    GuiName = GuiName or "Name"
+    GameName = GameName or "Game Name"
 
     local ScreenGUI = (syn and syn.screengui_gui) or (function() end);
     local DEVIL_UI_Lib = Instance.new("ScreenGui")
@@ -113,6 +130,7 @@ function WindowTable:CreateWindow(GuiName, GameName)
         --[[
         
             Works on mobile to 🥱
+            If this dont work then just throw you pc/mobile retard 😂
         
         ]]
         
@@ -132,7 +150,7 @@ function WindowTable:CreateWindow(GuiName, GameName)
         
         local lastMousePos
         local lastGoalPos
-        local DRAG_SPEED = (10); -- // The speed of the UI darg.
+        local DRAG_SPEED = (8); -- // The speed of the UI darg.
         function Update(dt)
             if not (startPos) then return end;
             if not (dragging) and (lastGoalPos) then
@@ -179,7 +197,7 @@ function WindowTable:CreateWindow(GuiName, GameName)
             while autofixertheui do wait()
                 pcall(function()
                     local function UpdateCanvasSize(Canvas, Constraint)
-                        Canvas.CanvasSize = UDim2.new(0, Constraint.AbsoluteContentSize.X, 0, Constraint.AbsoluteContentSize.Y+20)
+                        Canvas.CanvasSize = UDim2.new(0, Constraint.AbsoluteContentSize.X, 0, Constraint.AbsoluteContentSize.Y+10)
                     end
         
         
@@ -242,7 +260,7 @@ function WindowTable:CreateWindow(GuiName, GameName)
                 while autofixertheui do wait()
                     pcall(function()
                         local function UpdateCanvasSize(Canvas, Constraint)
-                            Canvas.CanvasSize = UDim2.new(0, Constraint.AbsoluteContentSize.X, 0, Constraint.AbsoluteContentSize.Y+20)
+                            Canvas.CanvasSize = UDim2.new(0, Constraint.AbsoluteContentSize.X, 0, Constraint.AbsoluteContentSize.Y+10)
                         end
             
             
@@ -288,27 +306,27 @@ function WindowTable:CreateWindow(GuiName, GameName)
         allPageCorner.Parent = allPages
     
         
-    local function onInputBegan(input, gameProcessed)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-            for i,v in next, pagesFolder:GetChildren() do -- We get all the pages that we added
-				v.Visible = false	-- then we make them invisible 
-			end 
-			newPage.Visible = true	-- We make current page visible but not others
-			
-			--Animations Below  -- Optional
-			for i,v in next, allTabs:GetChildren() do	-- We get all the elements inside the frame
-				if v:IsA("TextButton") then -- We can't animate UIListLayout, so we check if its a TextButton
-					game.TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-						BackgroundColor3 = Color3.fromRGB(30, 30, 30) -- We animate other Tab Buttons and making the current one seem Checked
-					}):Play()
-				end
-			end
-			game.TweenService:Create(tabButton, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-				BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- We animate other Tab Buttons and making the current one seem Checked
-			}):Play()
+        local function onInputBegan(input, gameProcessed)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                for i,v in next, pagesFolder:GetChildren() do -- We get all the pages that we added
+                    v.Visible = false	-- then we make them invisible 
+                end 
+                newPage.Visible = true	-- We make current page visible but not others
+                
+                --Animations Below  -- Optional
+                for i,v in next, allTabs:GetChildren() do	-- We get all the elements inside the frame
+                    if v:IsA("TextButton") then -- We can't animate UIListLayout, so we check if its a TextButton
+                        game.TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+                            BackgroundColor3 = Color3.fromRGB(30, 30, 30) -- We animate other Tab Buttons and making the current one seem Checked
+                        }):Play()
+                    end
+                end
+                game.TweenService:Create(tabButton, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+                    BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- We animate other Tab Buttons and making the current one seem Checked
+                }):Play()
+            end
         end
-    end
-    tabButton.InputBegan:Connect(onInputBegan)
+        tabButton.InputBegan:Connect(onInputBegan)
 
 
 
@@ -347,6 +365,7 @@ function WindowTable:CreateWindow(GuiName, GameName)
 
         end
 
+
         function PagesHandler:CreateSection(SectionMainText)
             SectionMainText = SectionMainText or "Section Text"
 
@@ -380,7 +399,6 @@ function WindowTable:CreateWindow(GuiName, GameName)
         end
 
 
-		
 		function PagesHandler:CreateButton(ButtonText, callback)
 			ButtonText = ButtonText or "Text Button"
 			callback = callback or function() end	
@@ -673,7 +691,202 @@ function WindowTable:CreateWindow(GuiName, GameName)
 
         end
 
-		
+
+
+        function PagesHandler:CreateDropdown(DropdownMainText, Contents, callback)
+            DropdownMainText = DropdownMainText or "Dropdown Text"
+            callback = callback or function() end	
+
+            local PageDropdownFrame = Instance.new("Frame")
+            local DropdownText = Instance.new("TextLabel")
+            local DropdownFrameCorner = Instance.new("UICorner")
+            local DropdownArrow = Instance.new("ImageButton")
+            local DropdownMainButton = Instance.new("TextButton")
+
+            ----------Dropdown List----------
+
+            local PageDropdownScrollingFrame = Instance.new("ScrollingFrame")
+            local DropdownScrollCorner = Instance.new("UICorner")
+            local DropdownScrollListLayout = Instance.new("UIListLayout")
+            local DropdownScrollPadding = Instance.new("UIPadding")
+
+            ----------Dropdown List----------
+
+            
+            PageDropdownFrame.Name = "PageDropdownFrame"
+            PageDropdownFrame.Parent = newPage
+            PageDropdownFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+            PageDropdownFrame.BorderSizePixel = 0
+            PageDropdownFrame.Position = UDim2.new(0.0211267602, 0, 0.0235245991, 0)
+            PageDropdownFrame.Size = UDim2.new(0, 340, 0, 25)
+
+            DropdownText.Name = "DropdownText"
+            DropdownText.Parent = PageDropdownFrame
+            DropdownText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            DropdownText.BackgroundTransparency = 1.000
+            DropdownText.BorderSizePixel = 0
+            DropdownText.Position = UDim2.new(0.0294117648, 0, 0, 0)
+            DropdownText.Size = UDim2.new(0, 300, 0, 25)
+            DropdownText.Font = Enum.Font.Cartoon
+            DropdownText.Text = DropdownMainText
+            DropdownText.TextColor3 = Color3.fromRGB(255, 255, 255)
+            DropdownText.TextSize = 15.000
+            DropdownText.TextStrokeTransparency = 0.900
+            DropdownText.TextTransparency = 0.300
+            DropdownText.TextWrapped = true
+            DropdownText.TextXAlignment = Enum.TextXAlignment.Left
+
+            DropdownFrameCorner.Name = "DropdownFrameCorner"
+            DropdownFrameCorner.Parent = PageDropdownFrame
+
+            DropdownArrow.Name = "DropdownArrow"
+            DropdownArrow.Parent = PageDropdownFrame
+            DropdownArrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            DropdownArrow.BackgroundTransparency = 1.000
+            DropdownArrow.Position = UDim2.new(0.925000012, 0, 0.0799999982, 0)
+            DropdownArrow.Rotation = 180
+            DropdownArrow.Size = UDim2.new(0, 20, 0, 20)
+            DropdownArrow.Image = "http://www.roblox.com/asset/?id=71659683"
+
+            DropdownMainButton.Name = "DropdownMainButton"
+            DropdownMainButton.Parent = PageDropdownFrame
+            DropdownMainButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            DropdownMainButton.BackgroundTransparency = 1.000
+            DropdownMainButton.BorderSizePixel = 0
+            DropdownMainButton.Size = UDim2.new(0, 339, 0, 25)
+            DropdownMainButton.Font = Enum.Font.SourceSans
+            DropdownMainButton.Text = ""
+            DropdownMainButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+            DropdownMainButton.TextSize = 14.000
+
+
+            ----------Dropdown List----------
+
+            PageDropdownScrollingFrame.Name = "PageDropdownScrollingFrame"
+            PageDropdownScrollingFrame.Parent = newPage
+            PageDropdownScrollingFrame.Active = false
+            PageDropdownScrollingFrame.Visible = false
+            PageDropdownScrollingFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+            PageDropdownScrollingFrame.BorderSizePixel = 0
+            PageDropdownScrollingFrame.Position = UDim2.new(0.0633802786, 0, 0.156156242, 0)
+            PageDropdownScrollingFrame.Size = UDim2.new(0, 340, 0, 155)
+            PageDropdownScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+            PageDropdownScrollingFrame.ScrollBarThickness = 7
+
+            DropdownScrollCorner.CornerRadius = UDim.new(0, 5)
+            DropdownScrollCorner.Name = "DropdownScrollCorner"
+            DropdownScrollCorner.Parent = PageDropdownScrollingFrame
+
+            DropdownScrollListLayout.Name = "DropdownScrollListLayout"
+            DropdownScrollListLayout.Parent = PageDropdownScrollingFrame
+            DropdownScrollListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+            DropdownScrollListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+            DropdownScrollListLayout.Padding = UDim.new(0, 5)
+
+            DropdownScrollPadding.Name = "DropdownScrollPadding"
+            DropdownScrollPadding.Parent = PageDropdownScrollingFrame
+            DropdownScrollPadding.PaddingTop = UDim.new(0, 5)
+
+            ----------Dropdown List----------
+
+            local function TEGYQ_fake_script() -- PageDropdownScrollingFrame.DropdownScrollFixer 
+                local script = Instance.new('Script', PageDropdownScrollingFrame)
+            
+                spawn(function()
+                    getgenv().autofixertheui = true
+                    while autofixertheui do wait()
+                        pcall(function()
+                            local function UpdateCanvasSize(Canvas, Constraint)
+                                Canvas.CanvasSize = UDim2.new(0, Constraint.AbsoluteContentSize.X, 0, Constraint.AbsoluteContentSize.Y+10)
+                            end
+                
+                
+                            wait() --//Idk why add wait LMFAO//
+                
+                            UpdateCanvasSize(script.Parent, script.Parent.DropdownScrollListLayout)
+                        end)
+                    end
+                end)
+            end
+            coroutine.wrap(TEGYQ_fake_script)()
+
+
+            local function onInputBegan(input, gameProcessed)
+                if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                    if DropdownArrow.Rotation == 90 then
+                        local TweenService = game:GetService("TweenService")
+                        local Object = DropdownArrow -- The object you want to tween.
+                        local tweenInfo = TweenInfo.new(
+                            0.2, -- The time the tween takes to complete
+                            Enum.EasingStyle.Linear, -- The tween style.
+                            Enum.EasingDirection.Out, -- EasingDirection
+                            .5, -- How many times you want the tween to repeat. If you make it less than 0 it will repeat forever.
+                            false, -- Reverse?
+                            0 -- Delay
+                        )
+                        local Tween = TweenService:Create(Object, tweenInfo, {Rotation = 180}) -- Creates the tween with the TweenInfo and what properties you want to change
+                        Tween:Play() -- Plays the tween
+                        wait(0.2)
+                        PageDropdownScrollingFrame.Active = false
+                        PageDropdownScrollingFrame.Visible = false
+                    elseif DropdownArrow.Rotation == 180.000 then
+                        local TweenService = game:GetService("TweenService")
+                        local Object = DropdownArrow -- The object you want to tween.
+                        local tweenInfo = TweenInfo.new(
+                            0.2, -- The time the tween takes to complete
+                            Enum.EasingStyle.Linear, -- The tween style.
+                            Enum.EasingDirection.Out, -- EasingDirection
+                            .5, -- How many times you want the tween to repeat. If you make it less than 0 it will repeat forever.
+                            false, -- Reverse?
+                            0 -- Delay
+                        )
+                        local Tween = TweenService:Create(Object, tweenInfo, {Rotation = 90}) -- Creates the tween with the TweenInfo and what properties you want to change
+                        Tween:Play() -- Plays the tween
+                        wait(0.2)
+                        PageDropdownScrollingFrame.Active = true
+                        PageDropdownScrollingFrame.Visible = true
+                    end 
+                end
+            end
+            DropdownMainButton.InputBegan:Connect(onInputBegan)
+
+            
+            local ChangeFunction = callback
+            local function CreateContents(List)
+                for i,v in ipairs(List) do
+                    local DropdownTextButton = Instance.new("TextButton")
+                    local DropdownTextButtonCorner = Instance.new("UICorner")
+
+                    DropdownTextButton.Name = v
+                    DropdownTextButton.Parent = PageDropdownScrollingFrame
+                    DropdownTextButton.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+                    DropdownTextButton.Size = UDim2.new(0, 310, 0, 25)
+                    DropdownTextButton.Font = Enum.Font.Cartoon
+                    DropdownTextButton.Text = v
+                    DropdownTextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    DropdownTextButton.TextSize = 15.000
+                    DropdownTextButton.TextStrokeTransparency = 0.900
+                    DropdownTextButton.TextTransparency = 0.300
+                    DropdownTextButton.TextWrapped = true
+        
+                    DropdownTextButtonCorner.CornerRadius = UDim.new(0, 5)
+                    DropdownTextButtonCorner.Name = "DropdownTextButtonCorner"
+                    DropdownTextButtonCorner.Parent = DropdownTextButton
+
+                    local function onInputBegan(input, gameProcessed)
+                        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                            DropdownText.Text = DropdownTextButton.Text
+                            coroutine.wrap(ChangeFunction)(DropdownTextButton.Text)
+                        end
+                    end
+                    DropdownTextButton.InputBegan:Connect(onInputBegan)
+                end
+            end
+            
+            CreateContents(Contents)
+
+        end
+
 		return PagesHandler
 
     end
@@ -682,4 +895,52 @@ function WindowTable:CreateWindow(GuiName, GameName)
 
 end
 
-return WindowTable
+------------------------------------------------------------
+
+return DEVIL_UI_Library
+
+------------------------------------------------------------
+--[[
+
+    Use if you want dont skid
+    If you want to skid then fuck yourself 😂
+    Learn to make your own UI Library.
+
+]]
+
+
+--[[
+
+local Window = DEVIL_UI_Library:CreateWindow("DEVIL Script", game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
+
+local tab = Window:CreateTab("DEVIL's Tab 1")
+
+local tab2 = Window:CreateTab("DEVIL's Tab 2")
+
+tab:CreateSection("This is a Section")
+
+tab:CreateTextLabel("This is a Text Label")
+
+tab:CreateButton("Click me(Button)", function()
+	print("Thanks for clicking ❤")
+end)
+
+tab:CreateToggle("Im a Toggle(T/F)", function(bool)
+	print("The toggle is set to: " ..bool)
+end)
+
+tab:CreateSlider('WalkSpeedChanger', {
+    Min = 1,
+    Max = 100,
+    Default = game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed
+}, function(value)
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
+
+tab:CreateDropdown('DEVIL Dropdown', {'Epic', 'LOL', 'This', 'Is', 'Cool', 'Right', 'My Guy'}, function(output)
+	print(output)
+end)
+
+tab2:CreateTextLabel("You can use this Ui Library Freely :)")
+
+]]
