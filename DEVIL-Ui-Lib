@@ -1,3 +1,42 @@
+--[[
+
+local DEVIL_UI_Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Prajon/UI-Stuffs/main/DEVIL-Ui-Lib", true))()
+
+local Window = DEVIL_UI_Library:CreateWindow("DEVIL Script", game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
+
+local tab = Window:CreateTab("DEVIL's Tab 1")
+
+local tab2 = Window:CreateTab("DEVIL's Tab 2")
+
+tab:CreateSection("This is a Section")
+
+tab:CreateTextLabel("This is a Text Label")
+
+tab:CreateButton("Click me(Button)", function()
+	print("Thanks for clicking ❤")
+end)
+
+tab:CreateToggle("Im a Toggle", function(bool)
+	print("Toggle is : ", bool)
+end)
+
+tab:CreateSlider('WalkSpeedChanger', {
+    Min = 1,
+    Max = 100,
+    Default = game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed
+}, function(value)
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
+
+tab:CreateDropdown('DEVIL Dropdown', {'DEVIL', 'Made', 'This', 'So', 'Its', 'Cool', 'Discord - D£VIL#9698'}, function(output)
+	print(output)
+end)
+
+tab2:CreateTextLabel("You can use this Ui Library Freely :)")
+
+]]
+
+
 ------------------------------------------------------------
 --[[
 
@@ -905,44 +944,5 @@ return DEVIL_UI_Library
     Use if you want dont skid
     If you want to skid then fuck yourself 😂
     Learn to make your own UI Library.
-
-]]
-
-
---[[
-
-local DEVIL_UI_Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Prajon/UI-Stuffs/main/DEVIL-Ui-Lib", true))()
-
-local Window = DEVIL_UI_Library:CreateWindow("DEVIL Script", game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
-
-local tab = Window:CreateTab("DEVIL's Tab 1")
-
-local tab2 = Window:CreateTab("DEVIL's Tab 2")
-
-tab:CreateSection("This is a Section")
-
-tab:CreateTextLabel("This is a Text Label")
-
-tab:CreateButton("Click me(Button)", function()
-	print("Thanks for clicking ❤")
-end)
-
-tab:CreateToggle("Im a Toggle(T/F)", function(bool)
-	print("Why DEVIL is so Cool: ", bool)
-end)
-
-tab:CreateSlider('WalkSpeedChanger', {
-    Min = 1,
-    Max = 100,
-    Default = game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed
-}, function(value)
-game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
-end)
-
-tab:CreateDropdown('DEVIL Dropdown', {'DEVIL', 'Made', 'This', 'So', 'Its', 'Cool', 'Discord - D£VIL#9698'}, function(output)
-	print(output)
-end)
-
-tab2:CreateTextLabel("You can use this Ui Library Freely :)")
 
 ]]
