@@ -911,6 +911,8 @@ return DEVIL_UI_Library
 
 --[[
 
+local DEVIL_UI_Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Prajon/UI-Stuffs/main/DEVIL-Ui-Lib", true))()
+
 local Window = DEVIL_UI_Library:CreateWindow("DEVIL Script", game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
 
 local tab = Window:CreateTab("DEVIL's Tab 1")
@@ -926,7 +928,7 @@ tab:CreateButton("Click me(Button)", function()
 end)
 
 tab:CreateToggle("Im a Toggle(T/F)", function(bool)
-	print("The toggle is set to: " ..bool)
+	print("Why DEVIL is so Cool: ", bool)
 end)
 
 tab:CreateSlider('WalkSpeedChanger', {
@@ -937,7 +939,7 @@ tab:CreateSlider('WalkSpeedChanger', {
 game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
 end)
 
-tab:CreateDropdown('DEVIL Dropdown', {'Epic', 'LOL', 'This', 'Is', 'Cool', 'Right', 'My Guy'}, function(output)
+tab:CreateDropdown('DEVIL Dropdown', {'DEVIL', 'Made', 'This', 'So', 'Its', 'Cool', 'Discord - D£VIL#9698'}, function(output)
 	print(output)
 end)
 
