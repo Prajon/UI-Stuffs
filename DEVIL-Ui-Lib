@@ -34,6 +34,16 @@ end)
 
 tab2:CreateTextLabel("You can use this Ui Library Freely :)")
 
+
+tab:CreateButton("Destory Ui", function()
+	for i,v in pairs(game.CoreGui:GetChildren()) do
+        if v.Name == "DEVIL_UI_Lib" then
+            v:Remove()
+        end
+    end
+end)
+
+
 ]]
 
 
