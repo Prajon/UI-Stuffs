@@ -24,7 +24,7 @@ local TitleLabel = Instance.new("TextLabel")
 --Properties:
 
 DEVILHub.Name = "DEVIL Hub"
-DEVILHub.Parent = game.CpreGui
+DEVILHub.Parent = game.CoreGui
 DEVILHub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 MainFrame.Name = "MainFrame"
