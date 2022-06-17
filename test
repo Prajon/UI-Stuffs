@@ -1,4 +1,4 @@
-
+print("A")
 if game:IsLoaded() then
     print("Game Is Loaded")
 else
